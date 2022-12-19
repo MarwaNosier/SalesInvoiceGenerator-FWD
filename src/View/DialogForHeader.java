@@ -13,60 +13,55 @@ import java.awt.*;
  * @author Marwa Mahmoud
  */
 public class DialogForHeader extends JDialog {
-     private JTextField JTextFieldCustomerName;
-    private JTextField JTextFieldInvoiceDate;
+     private JTextField TextFieldCustomerName;
+    private JTextField TextFieldInvoiceDate;
 
 
-    private JLabel JLabelCustomerName;
+    private JLabel CustomerName;
 
-    private JLabel JLabelInvoiceDate;
+    private JLabel InvoiceDate;
 
-    private JButton JButtonOk;
+    private JButton ButtonOk;
 
-    private JButton JButtonCancel;
+    private JButton ButtonCancel;
 
     public DialogForHeader(SIG_Frame frame) {
-        JTextFieldCustomerName = new JTextField(25);
-        JLabelCustomerName = new JLabel("Customer Name");
-
-        JTextFieldInvoiceDate = new JTextField(25);
-        JLabelInvoiceDate = new JLabel("Invoice Date");
-
+        TextFieldCustomerName = new JTextField(25);
+        CustomerName = new JLabel("Customer Name");
+        add(CustomerName);
+        add(TextFieldCustomerName);
 
 
-        JButtonOk = new JButton("OK");
+        TextFieldInvoiceDate = new JTextField(25);
+        InvoiceDate = new JLabel("Invoice Date");
+        add(InvoiceDate);
+        add(TextFieldInvoiceDate);
 
-        JButtonCancel = new JButton("Cancel");
-        JButtonOk.setActionCommand("OkCreatNewInvoice");
 
-        JButtonCancel.setActionCommand("CancelNewInvoice");
-        JButtonOk.addActionListener(frame.getListenerBtns());
+        ButtonOk = new JButton("OK");
+        ButtonOk.setActionCommand("OkCreatNewInvoice");
+        ButtonOk.addActionListener(frame.getListenerBtns());
+        add(ButtonOk);
 
-        JButtonCancel.addActionListener(frame.getListenerBtns());
+
+        ButtonCancel = new JButton("Cancel");
+        ButtonCancel.setActionCommand("CancelNewInvoice");
+        ButtonCancel.addActionListener(frame.getListenerBtns());
+        add(ButtonCancel);
+
         setLayout(new GridLayout(8, 6));
-
-
-        add(JLabelCustomerName);
-        add(JTextFieldCustomerName);
-        add(JLabelInvoiceDate);
-        add(JTextFieldInvoiceDate);
-        add(JButtonOk);
-        add(JButtonCancel);
         pack();
 
     }
 
     public JTextField getJTextFieldCustomerName() {
-        return JTextFieldCustomerName;
+        return TextFieldCustomerName;
     }
 
     public JTextField getJTextFieldInvoiceDate() {
-        return JTextFieldInvoiceDate;
+        return TextFieldInvoiceDate;
     }
 
 
 }
-
-
-
 
