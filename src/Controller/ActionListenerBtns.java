@@ -148,8 +148,8 @@ public class ActionListenerBtns  implements ActionListener{
 
     private void OkCreatNewLine() {
         dialogForLine.setVisible(false);
-        String s1=dialogForLine.getJTextFielditemName().getText();
-        String s2=dialogForLine.getJTextFielditemCount().getText();
+        String s1=dialogForLine.getTextFielditemName().getText();
+        String s2=dialogForLine.getTextFielditemCount().getText();
         String s3 =dialogForLine.getItemPriceField().getText();
         int count=1;
         double price=1.0;
