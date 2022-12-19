@@ -13,60 +13,62 @@ import java.awt.GridLayout;
  */
 public class DialogForLine   extends JDialog {
     
-    private final JLabel JLabelitemPrice;
+    private final JLabel LabelitemPrice;
 
-    private final JButton JButtonOk;
+    private final JButton ButtonOk;
 
-    private final JButton JButtonCancel;
+    private final JButton ButtonCancel;
 
     private final JTextField itemPriceField;
 
-    private final JLabel JLabelitemName;
+    private final JLabel LabelitemName;
 
-    private final JLabel JLabelitemCount;
+    private final JLabel LabelitemCount;
 
-    private final JTextField JTextFielditemName;
+    private final JTextField TextFielditemName;
 
-    private final JTextField JTextFielditemCount;
+    private final JTextField TextFielditemCount;
 
 
     public DialogForLine(SIG_Frame frame) {
-        JTextFielditemName = new JTextField(25);
-        JLabelitemName = new JLabel("Item Name");
+        TextFielditemName = new JTextField(25);
+        LabelitemName = new JLabel("Item Name");
+        add(LabelitemName);
+        add(TextFielditemName);
 
-        JTextFielditemCount = new JTextField(25);
-        JLabelitemCount = new JLabel("Item Count");
+        TextFielditemCount = new JTextField(25);
+        LabelitemCount = new JLabel("Item Count");
+        add(LabelitemCount);
+        add(TextFielditemCount);
 
         itemPriceField = new JTextField(25);
-        JLabelitemPrice = new JLabel("Item Price");
+        LabelitemPrice = new JLabel("Item Price");  
+        add(LabelitemPrice);
+        add(itemPriceField);
 
-        JButtonOk = new JButton("OK");
-        JButtonCancel = new JButton("Cancel");
-        JButtonOk.setActionCommand("OkCreatNewLine");
-        JButtonCancel.setActionCommand("CancelNewLine");
-        JButtonOk.addActionListener(frame.getListenerBtns());
-        JButtonCancel.addActionListener(frame.getListenerBtns());
+        ButtonOk = new JButton("OK");
+        ButtonCancel = new JButton("Cancel");
+        ButtonOk.setActionCommand("OkCreatNewLine");
+        ButtonOk.addActionListener(frame.getListenerBtns());
+        add(ButtonOk);
+
+        
+        ButtonCancel.setActionCommand("CancelNewLine");
+        ButtonCancel.addActionListener(frame.getListenerBtns());  
+        add(ButtonCancel);
 
         setLayout(new GridLayout(9, 6));
-
-        add(JLabelitemName);
-        add(JTextFielditemName);
-        add(JLabelitemCount);
-        add(JTextFielditemCount);
-        add(JLabelitemPrice);
-        add(itemPriceField);
-        add(JButtonOk);
-        add(JButtonCancel);
+    
         pack();
 
     }
 
-    public JTextField getJTextFielditemName() {
-        return JTextFielditemName;
+    public JTextField getTextFielditemName() {
+        return TextFielditemName;
     }
 
-    public JTextField getJTextFielditemCount() {
-        return JTextFielditemCount;
+    public JTextField getTextFielditemCount() {
+        return TextFielditemCount;
     }
 
     public JTextField getItemPriceField() {
