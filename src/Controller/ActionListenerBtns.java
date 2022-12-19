@@ -37,42 +37,24 @@ public class ActionListenerBtns  implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        switch (e.getActionCommand()){
-            case "Create Invoice":
-                CreateNewInvoice();
-                break;
-
-            case "Delete Invoice":
-                DeleteInvoice();
-                break;
-
-            case "Add Item":
-                Save();
-                break;
-
-            case "Delete Item":
-                Cancel();
-                break;
-
-
-            case "OkCreatNewInvoice":
-                OkCreatNewInvoice();
-                break;
-
-            case "CancelNewInvoice":
-                CancelNewInvoice();
-                break;
-
-            case "OkCreatNewLine":
-                OkCreatNewLine();
-                break;
-
-            case "CancelNewLine":
-                CancelNewLine();
-                break;
-
+        if(e.getActionCommand()=="Create Invoice"){
+             CreateNewInvoice();
+        }else if(e.getActionCommand()=="Delete Invoice"){
+              DeleteInvoice();
+        }else if(e.getActionCommand()=="Add Item"){
+              Save();
+        }else if(e.getActionCommand()=="Delete Item"){
+                 Cancel();
+        }else if(e.getActionCommand()=="OkCreatNewInvoice"){
+            OkCreatNewInvoice();
+        }else if(e.getActionCommand()=="CancelNewInvoice"){
+             CancelNewInvoice();
         }
-
+         else if(e.getActionCommand()=="OkCreatNewLine"){
+              OkCreatNewLine();
+        }else if(e.getActionCommand()=="CancelNewLine"){
+             CancelNewLine();
+        }  
     }
 
     private void CreateNewInvoice() {
@@ -140,8 +122,8 @@ public class ActionListenerBtns  implements ActionListener{
         try {
             date =SIG_Frame.date.parse(S2);
         } catch (ParseException e ) {
-            JOptionPane.showMessageDialog(frame, "Cann't parse date", "Wrong Date Format", JOptionPane.ERROR_MESSAGE);
-        } // parse to be revised
+            JOptionPane.showMessageDialog(frame, "Wrong Date Format!!", "Wrong Date Format", JOptionPane.ERROR_MESSAGE);
+        } 
         int num=0;
         for(InvoiceHeader header : frame.getInvoicesArr() ){
             if (header.getinvoiceNum()>num) {
@@ -174,13 +156,13 @@ public class ActionListenerBtns  implements ActionListener{
         try {
             count = Integer.parseInt(s2);
         } catch(NumberFormatException e) {
-            JOptionPane.showMessageDialog(frame, "Enter valid Count ", "Invalid number format", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Please Enter valid Count ", "Invalid number format", JOptionPane.ERROR_MESSAGE);
         }
 
         try {
             price = Double.parseDouble(s3);
         } catch(NumberFormatException e) {
-            JOptionPane.showMessageDialog(frame, "Enter valid price", "Invalid number format", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Please Enter valid price", "Invalid number format", JOptionPane.ERROR_MESSAGE);
         }
 
         int indexOfSelectedRow=frame.getjTable_Invoice().getSelectedRow();
@@ -189,7 +171,6 @@ public class ActionListenerBtns  implements ActionListener{
             InvoiceLine newline =new InvoiceLine(h, s1, price, count);
 
             frame.getLinesArr().add(newline);
-            // frame.getLineTable().fireTableDataChanged();
             InvoiceLineTable lineTable = (InvoiceLineTable) frame.getjTable_Items().getModel();
             lineTable.fireTableDataChanged();
 
@@ -211,11 +192,10 @@ public class ActionListenerBtns  implements ActionListener{
 
     }
     private void printInvoices() {
-        System.out.println("*****************");
         for (InvoiceHeader header : frame.getInvoicesArr()) {
             System.out.println(header);
         }
-        System.out.println("*****************");
+       System.out.println("*****************");
     }
 }
 

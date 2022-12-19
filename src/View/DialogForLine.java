@@ -6,7 +6,6 @@
 package View;
 import javax.swing.*;
 import java.awt.GridLayout;
-import View.SIG_Frame;
 
 /**
  *
@@ -14,21 +13,21 @@ import View.SIG_Frame;
  */
 public class DialogForLine   extends JDialog {
     
-    private JLabel JLabelitemPrice;
+    private final JLabel JLabelitemPrice;
 
-    private JButton JButtonOk;
+    private final JButton JButtonOk;
 
-    private JButton JButtonCancel;
+    private final JButton JButtonCancel;
 
-    private JTextField itemPriceField;
+    private final JTextField itemPriceField;
 
-    private JLabel JLabelitemName;
+    private final JLabel JLabelitemName;
 
-    private JLabel JLabelitemCount;
+    private final JLabel JLabelitemCount;
 
-    private JTextField JTextFielditemName;
+    private final JTextField JTextFielditemName;
 
-    private JTextField JTextFielditemCount;
+    private final JTextField JTextFielditemCount;
 
 
     public DialogForLine(SIG_Frame frame) {

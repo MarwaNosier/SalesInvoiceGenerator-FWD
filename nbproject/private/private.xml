@@ -2,6 +2,16 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/SalesInvoiceGenerator-FWD/src/Model/InvoiceHeader.java</file>
+            <file>file:/D:/SalesInvoiceGenerator-FWD/src/View/DialogForHeader.java</file>
+            <file>file:/D:/SalesInvoiceGenerator-FWD/src/View/DialogForLine.java</file>
+            <file>file:/D:/SalesInvoiceGenerator-FWD/src/Model/InvoiceLine.java</file>
+            <file>file:/D:/SalesInvoiceGenerator-FWD/src/View/SIG_Frame.java</file>
+            <file>file:/D:/SalesInvoiceGenerator-FWD/src/Controller/ActionListenerMenuItems.java</file>
+            <file>file:/D:/SalesInvoiceGenerator-FWD/src/Model/InvoiceHeaderTable.java</file>
+            <file>file:/D:/SalesInvoiceGenerator-FWD/src/Model/InvoiceLineTable.java</file>
+            <file>file:/D:/SalesInvoiceGenerator-FWD/src/Controller/ActionListenerForTable.java</file>
+        </group>
     </open-files>
 </project-private>

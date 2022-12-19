@@ -35,46 +35,35 @@ public class InvoiceLineTable extends AbstractTableModel {
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         InvoiceLine Row=linesArr.get(rowIndex);
-        switch(columnIndex){
-            case 0:
-                return Row.getHeader().getinvoiceNum();
-
-            case 1:
-                return Row.getItemName();
-
-            case 2:
-                return Row.getitemPrice();
-
-            case 3:
-                return Row.getCount();
-
-            case 4:
-                return Row.getTotalLine();
-
-            default:
-                return null;
-
+        if(columnIndex==0){
+             return Row.getHeader().getinvoiceNum();
+        }else if(columnIndex==1){
+             return Row.getItemName();
+        }else if(columnIndex==2){
+            return Row.getitemPrice();
+        }else if(columnIndex==3){
+            return Row.getCount();
+        }else if(columnIndex==4){
+            return Row.getTotalLine();
+        }else{
+            return null;
         }
     }
     @Override
     public String getColumnName(int column){
-        switch (column){
-            case 0:
-                return "No.";
-
-            case 1 :
-                return "Item Nme";
-
-            case 2 :
-                return "Item Price";
-
-            case 3:
+        
+        if(column==0){
+            return "No.";
+        } else if(column==1){
+            return "Item Name";
+        }else if(column==2){
+             return "Item Price";
+        }else if(column==3){
                 return "Count";
-            case 4:
-                return "Item Total";
-
-            default:
-                return "";
+        }else if(column==4){
+            return "Item Total";
+        }else{
+             return "";
         }
 
     }

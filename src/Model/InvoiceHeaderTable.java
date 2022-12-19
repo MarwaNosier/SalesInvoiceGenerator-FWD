@@ -37,39 +37,33 @@ public class InvoiceHeaderTable extends AbstractTableModel {
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         InvoiceHeader invoiceHeader=invoicesArr.get(rowIndex) ;
-        switch(columnIndex){
-            case 0:
-                return invoiceHeader.getinvoiceNum() ;
-            case 1:
-                return SIG_Frame.date.format(invoiceHeader.getinvoiceDate()) ;
-            case 2 :
-                return invoiceHeader.getCustomerName();
-            case 3 :
-                return invoiceHeader.getTotalInvoice();
-            default:
-                return null;
+        if(columnIndex==0){
+             return invoiceHeader.getinvoiceNum() ;
+        } else if(columnIndex==1){
+             return SIG_Frame.date.format(invoiceHeader.getinvoiceDate()) ;
+        }else if(columnIndex==2){
+             return invoiceHeader.getCustomerName();
+        }else if(columnIndex==3){
+             return invoiceHeader.getTotalInvoice();
+        }else{
+             return null;
         }
-
-
     }
-
+          
     @Override
     public String getColumnName(int column){
-        switch (column){
-            case 0:
-                return "No.";
-
-            case 1 :
-                return "Date";
-
-            case 2 :
-                return "Costumer";
-
-            case 3:
+           if(column==0){
+             return "No.";
+        } else if(column==1){
+            return "Date";
+        }else if(column==2){
+             return "Costumer";
+        }else if(column==3){
                 return "Total";
-            default:
-                return "";
+        }else{
+             return "";
         }
+        
 
     }
 }

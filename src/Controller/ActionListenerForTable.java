@@ -7,16 +7,13 @@ package Controller;
 
 import View.SIG_Frame;
 import Model.InvoiceHeader;
-import Model.InvoiceHeaderTable;
 import Model.InvoiceLine;
 import Model.InvoiceLineTable;
 
 
 
 import java.util.ArrayList;
-import java.util.Date;
 
-import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 /**
@@ -33,7 +30,7 @@ public class ActionListenerForTable implements ListSelectionListener{
     
     public void valueChanged(ListSelectionEvent e) {
         int indexOfSelectedRow=frame.getjTable_Invoice().getSelectedRow();
-        System.out.println("Invoice you selected is : " + indexOfSelectedRow);
+        System.out.println("You selected is Invoice number : " + (indexOfSelectedRow+1));
 
         if (indexOfSelectedRow != -1) {
 
@@ -50,11 +47,9 @@ public class ActionListenerForTable implements ListSelectionListener{
         }
 
     }
+   }
 
-    private void getLines() {
 
-    }
 
-}
 
 

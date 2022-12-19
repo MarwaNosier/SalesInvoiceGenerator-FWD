@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package View;
-import View.SIG_Frame;
 
 import javax.swing.*;
 import java.awt.*;

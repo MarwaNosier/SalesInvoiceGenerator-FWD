@@ -17,8 +17,6 @@ import Model.InvoiceLineTable;
 
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 /**
@@ -277,6 +275,7 @@ public class SIG_Frame extends JFrame{
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new SIG_Frame().setVisible(true);
+ 
             }
         });
     }
@@ -388,7 +387,7 @@ public class SIG_Frame extends JFrame{
         return listenerBtns;
     }
 
-  
+ 
 
 
 }
